@@ -420,6 +420,51 @@
         .step-btn:hover { background: var(--sa-600); transform: translateY(-1px); }
         .step-btn svg { width: 16px; height: 16px; }
 
+        /* ===== SUB-STEPS ===== */
+        .substep {
+            border-inline-start: 3px solid var(--sa-300);
+            background: var(--sa-50);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 18px;
+        }
+        .substep-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--gray-800);
+            margin-bottom: 12px;
+        }
+        .substep-num {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--sa-600);
+            color: #fff;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+        .btn-prompt {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--sa-700);
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+        .btn-prompt .arrow {
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
         /* ===== VOTE BUTTONS CONTAINER ===== */
         .vote-buttons-group {
             display: flex;
@@ -994,48 +1039,72 @@
                 <div class="step-card fade-in">
                     <div class="step-num">١</div>
                     <div class="step-body">
-                        <h3 data-i18n="step1_title">إنشاء حساب</h3>
+                        <h3 data-i18n="step1_title">حساب الدخول للموقع</h3>
+                        <p data-i18n="step1_intro">اختر حالتك — كل خيار له خطواته الخاصة:</p>
 
-                        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px;">
-                            <a href="https://www.itu.int/net4/wsis/stocktaking/Account/Register" target="_blank" rel="noopener noreferrer" class="step-btn">
+                        <!-- Sub-step A: Register (new account) -->
+                        <div class="substep">
+                            <div class="substep-title">
+                                <span class="substep-num">أ</span>
+                                <span data-i18n="substep_register_title">ما عندك حساب؟ سجّل جديد</span>
+                            </div>
+
+                            <div class="btn-prompt">
+                                <span class="arrow">👇</span>
+                                <span data-i18n="btn_prompt_register">اضغط هذا الزر لفتح صفحة التسجيل</span>
+                            </div>
+                            <a href="https://www.itu.int/net4/wsis/stocktaking/Account/Register" target="_blank" rel="noopener noreferrer" class="step-btn click-here" style="margin-bottom: 14px;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
                                 <span data-i18n="btn_register">سجّل حساب جديد</span>
                             </a>
-                            <a href="https://www.itu.int/net4/wsis/stocktaking/Account/Login" target="_blank" rel="noopener noreferrer" class="step-btn" style="background: var(--white); color: var(--sa-600); border: 2px solid var(--sa-500);">
+
+                            <!-- Organization Name Warning (registration-specific) -->
+                            <div class="org-warning">
+                                <div class="org-warning-text">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                    <span data-i18n="org_warning">حقل <strong>Organization name</strong> مهم جداً — تركه فارغاً قد يُلغي تصويتك:<br>• منسوبي جامعة القصيم → <strong>Qassim University</strong><br>• غير ذلك → اسم جهتك</span>
+                                </div>
+                                <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
+                                    <button class="org-copy-btn" onclick="copyOrgName()">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                        Qassim University
+                                    </button>
+                                    <span class="org-copy-feedback" id="orgCopyFeedback" data-i18n="org_copied">تم النسخ!</span>
+                                </div>
+
+                                <!-- Mini form field snippet -->
+                                <div class="mini-field">
+                                    <div class="mini-field-label">Organization name <span class="warn">⚠</span></div>
+                                    <div class="mini-field-input">Qassim University</div>
+                                </div>
+                            </div>
+
+                            <div class="step-tip">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                                <span data-i18n="step1_tip">رسالة التفعيل تصل لإيميلك — تحقّق من <strong>Spam/Junk</strong> إذا لم تظهر.</span>
+                            </div>
+
+                            <div class="step-tip" style="background: #FFF8E1; border-color: #FFE082; color: #8A5A00; margin-bottom: 0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                <span data-i18n="step1_traffic_tip">لو ظهر خطأ <strong>"Please try again"</strong> (التسجيل أو إعادة تعيين كلمة المرور) — أعد المحاولة.</span>
+                            </div>
+                        </div>
+
+                        <!-- Sub-step B: Login (existing account) -->
+                        <div class="substep" style="margin-bottom: 0;">
+                            <div class="substep-title">
+                                <span class="substep-num">ب</span>
+                                <span data-i18n="substep_login_title">عندك حساب؟ ادخل مباشرة</span>
+                            </div>
+
+                            <div class="btn-prompt">
+                                <span class="arrow">👇</span>
+                                <span data-i18n="btn_prompt_login">اضغط هذا الزر لتسجيل الدخول</span>
+                            </div>
+                            <a href="https://www.itu.int/net4/wsis/stocktaking/Account/Login" target="_blank" rel="noopener noreferrer" class="step-btn click-here" style="background: var(--white); color: var(--sa-600); border: 2px solid var(--sa-500);">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
                                 <span data-i18n="btn_login">لديّ حساب — دخول</span>
                             </a>
-                        </div>
-
-                        <!-- Organization Name Warning -->
-                        <div class="org-warning">
-                            <div class="org-warning-text">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                <span data-i18n="org_warning">حقل <strong>Organization name</strong> مهم جداً — تركه فارغاً قد يُلغي تصويتك:<br>• منسوبي جامعة القصيم → <strong>Qassim University</strong><br>• غير ذلك → اسم جهتك</span>
-                            </div>
-                            <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
-                                <button class="org-copy-btn" onclick="copyOrgName()">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                                    Qassim University
-                                </button>
-                                <span class="org-copy-feedback" id="orgCopyFeedback" data-i18n="org_copied">تم النسخ!</span>
-                            </div>
-
-                            <!-- Mini form field snippet -->
-                            <div class="mini-field">
-                                <div class="mini-field-label">Organization name <span class="warn">⚠</span></div>
-                                <div class="mini-field-input">Qassim University</div>
-                            </div>
-                        </div>
-
-                        <div class="step-tip">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                            <span data-i18n="step1_tip">رسالة التفعيل تصل لإيميلك — تحقّق من <strong>Spam/Junk</strong> إذا لم تظهر.</span>
-                        </div>
-
-                        <div class="step-tip" style="background: #FFF8E1; border-color: #FFE082; color: #8A5A00;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                            <span data-i18n="step1_traffic_tip">لو ظهر خطأ <strong>"Please try again"</strong> (التسجيل أو إعادة تعيين كلمة المرور) — أعد المحاولة.</span>
                         </div>
                     </div>
                 </div>
@@ -1049,9 +1118,17 @@
                         <div class="vote-buttons-group">
                             <!-- QSpark Vote -->
                             <div class="vote-project-card qspark-card">
+                                <div class="substep-title" style="margin-bottom: 8px;">
+                                    <span class="substep-num">أ</span>
+                                    <span data-i18n="substep_qspark_title">صوّت لـ QSpark</span>
+                                </div>
                                 <div class="vote-project-label" data-i18n="vote_label_1">QSpark</div>
                                 <div class="vote-project-name" data-i18n="vote_name_1">QSpark - The Spark of Intelligent E-Learning</div>
 
+                                <div class="btn-prompt">
+                                    <span class="arrow">👇</span>
+                                    <span data-i18n="btn_prompt_qspark">اضغط هذا الزر للتصويت لـ QSpark</span>
+                                </div>
                                 <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026/Vote?jts=9X09NR&id=17&page=9#:~:text=QSpark%20%2D%20The%20Spark%20of%20Intelligent%20E%2DLearning" target="_blank" rel="noopener noreferrer" class="step-btn click-here">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                     <span data-i18n="btn_vote_qspark">اضغط هنا للتصويت لـ QSpark</span>
@@ -1068,9 +1145,17 @@
 
                             <!-- SAGE-HE Vote -->
                             <div class="vote-project-card sagehe-card">
+                                <div class="substep-title" style="margin-bottom: 8px;">
+                                    <span class="substep-num">ب</span>
+                                    <span data-i18n="substep_sagehe_title">صوّت لـ SAGE-HE</span>
+                                </div>
                                 <div class="vote-project-label" data-i18n="vote_label_2">SAGE-HE</div>
                                 <div class="vote-project-name" data-i18n="vote_name_2">AI-Powered Smart Institutional Governance Platform for Higher Education</div>
 
+                                <div class="btn-prompt">
+                                    <span class="arrow">👇</span>
+                                    <span data-i18n="btn_prompt_sagehe">اضغط هذا الزر للتصويت لـ SAGE-HE</span>
+                                </div>
                                 <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026/Vote?jts=WU06EG#:~:text=AI%2DPowered%20Smart%20Institutional%20Governance%20Platform%20for%20Higher%20Education" target="_blank" rel="noopener noreferrer" class="step-btn click-here">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                     <span data-i18n="btn_vote_sagehe">اضغط هنا للتصويت لـ SAGE-HE</span>
@@ -1097,7 +1182,11 @@
                         <h3 data-i18n="step3_title">تأكد من تصويتك</h3>
                         <p data-i18n="step3_desc">اضغط على <strong>MY VOTES</strong> في القائمة العلوية للتأكّد من أن كلا المشروعين — <strong>QSpark</strong> (الفئة 9) و <strong>SAGE-HE</strong> (الفئة 1) — مُسجّلان في قائمة أصواتك.</p>
 
-                        <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026/MyVotes?jts=VJREMF" target="_blank" rel="noopener noreferrer" class="step-btn" style="margin-bottom: 14px;">
+                        <div class="btn-prompt">
+                            <span class="arrow">👇</span>
+                            <span data-i18n="btn_prompt_myvotes">اضغط هذا الزر لفتح قائمة تصويتاتك</span>
+                        </div>
+                        <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026/MyVotes?jts=VJREMF" target="_blank" rel="noopener noreferrer" class="step-btn click-here" style="margin-bottom: 14px;">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                             <span data-i18n="btn_myvotes">افتح صفحة تصويتاتي (My Votes)</span>
                         </a>
@@ -1314,7 +1403,12 @@
                 info3_title: 'SAGE-HE — Smart Governance', info3_desc: 'AI-powered smart institutional governance platform for higher education from Qassim University',
                 info4_title: 'Secure Voting', info4_desc: 'Through the official website — only 2 minutes of your time',
                 steps_tag: '3 Simple Steps', steps_title: 'How to Vote?', steps_subtitle: 'Follow these steps — it won\'t take more than 2 minutes',
-                step1_title: 'Create an Account',
+                step1_title: 'Account & Login',
+                step1_intro: 'Pick your situation — each path has its own steps:',
+                substep_register_title: 'No account? Register a new one',
+                substep_login_title: 'Already have an account? Log in',
+                btn_prompt_register: 'Click this button to open the registration page',
+                btn_prompt_login: 'Click this button to log in',
                 org_warning: 'The <strong>Organization name</strong> field is critical — leaving it empty may invalidate your vote:<br>• Qassim University members → <strong>Qassim University</strong><br>• Others → your own organization name',
                 org_copied: 'Copied!',
                 step1_tip: 'The activation email will arrive in your inbox — check <strong>Spam/Junk</strong> if you don\'t see it.',
@@ -1322,6 +1416,11 @@
                 btn_register: 'Register New Account',
                 btn_login: 'I have an account — Login',
                 step2_title: 'Vote',
+                substep_qspark_title: 'Vote for QSpark',
+                substep_sagehe_title: 'Vote for SAGE-HE',
+                btn_prompt_qspark: 'Click this button to vote for QSpark',
+                btn_prompt_sagehe: 'Click this button to vote for SAGE-HE',
+                btn_prompt_myvotes: 'Click this button to open your votes list',
                 btn_vote_qspark: 'Click Here to Vote for QSpark',
                 btn_vote_sagehe: 'Click Here to Vote for SAGE-HE',
                 vote_label_1: 'QSpark',
