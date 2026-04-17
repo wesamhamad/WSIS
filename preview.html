@@ -513,6 +513,16 @@
         .vote-project-card.qspark-card .vote-project-label { color: var(--sa-700); }
         .vote-project-card.sagehe-card .vote-project-label { color: var(--sa-700); }
 
+        .vote-action-block {
+            background: var(--white);
+            border: 2px solid var(--sa-400);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+        }
+        .vote-action-block .vote-project-name { margin-bottom: 8px; }
+        .vote-action-block .substep-title { margin-bottom: 6px !important; }
+
         .vote-project-name {
             font-size: 0.92rem;
             font-weight: 700;
@@ -1147,21 +1157,23 @@
                         <div class="vote-buttons-group">
                             <!-- QSpark Vote -->
                             <div class="vote-project-card qspark-card">
-                                <div class="substep-title" style="margin-bottom: 8px;">
-                                    <span class="substep-num">أ</span>
-                                    <span data-i18n="substep_qspark_title">صوّت لـ QSpark</span>
-                                </div>
-                                <div class="vote-project-label" data-i18n="vote_label_1">QSpark</div>
-                                <div class="vote-project-name" data-i18n="vote_name_1">QSpark - The Spark of Intelligent E-Learning</div>
+                                <div class="vote-action-block">
+                                    <div class="substep-title">
+                                        <span class="substep-num">أ</span>
+                                        <span data-i18n="substep_qspark_title">صوّت لـ QSpark</span>
+                                    </div>
+                                    <div class="vote-project-label" data-i18n="vote_label_1">QSpark</div>
+                                    <div class="vote-project-name" data-i18n="vote_name_1">QSpark - The Spark of Intelligent E-Learning</div>
 
-                                <div class="btn-prompt">
-                                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-                                    <span data-i18n="btn_prompt_qspark">اضغط هذا الزر للتصويت لـ QSpark</span>
+                                    <div class="btn-prompt">
+                                        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                                        <span data-i18n="btn_prompt_qspark">اضغط هذا الزر للتصويت لـ QSpark</span>
+                                    </div>
+                                    <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026/Vote?jts=9X09NR&id=17&page=9#:~:text=QSpark%20%2D%20The%20Spark%20of%20Intelligent%20E%2DLearning" target="_blank" rel="noopener noreferrer" class="step-btn click-here">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                        <span data-i18n="btn_vote_qspark">اضغط هنا للتصويت لـ QSpark</span>
+                                    </a>
                                 </div>
-                                <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026/Vote?jts=9X09NR&id=17&page=9#:~:text=QSpark%20%2D%20The%20Spark%20of%20Intelligent%20E%2DLearning" target="_blank" rel="noopener noreferrer" class="step-btn click-here">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                    <span data-i18n="btn_vote_qspark">اضغط هنا للتصويت لـ QSpark</span>
-                                </a>
 
                                 <div class="preview-caption">
                                     <svg class="caption-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
@@ -1169,7 +1181,7 @@
                                 </div>
                                 <div class="ss-project qspark" style="margin-bottom: 10px;">
                                     <div><div class="ss-project-name" style="background: #FFEB3B; display: inline; padding: 1px 3px; color: #000;">QSpark – The Spark of Intelligent E-Learning</div></div>
-                                    <div class="ss-vote-btn filled">Vote For This Project</div>
+                                    <div class="ss-vote-btn">Vote For This Project</div>
                                 </div>
 
                                 <div class="vote-step-item"><span class="vote-step-check">✓</span><span data-i18n="vote_done_hint">بمجرد الضغط يتم حساب تصويتك — <strong>لا يظهر أي تأكيد</strong>، فقط يعيدك لنفس الصفحة. اختفاء المشروع = نجاح التصويت.</span></div>
@@ -1177,21 +1189,23 @@
 
                             <!-- SAGE-HE Vote -->
                             <div class="vote-project-card sagehe-card">
-                                <div class="substep-title" style="margin-bottom: 8px;">
-                                    <span class="substep-num">ب</span>
-                                    <span data-i18n="substep_sagehe_title">صوّت لـ SAGE-HE</span>
-                                </div>
-                                <div class="vote-project-label" data-i18n="vote_label_2">SAGE-HE</div>
-                                <div class="vote-project-name" data-i18n="vote_name_2">AI-Powered Smart Institutional Governance Platform for Higher Education</div>
+                                <div class="vote-action-block">
+                                    <div class="substep-title">
+                                        <span class="substep-num">ب</span>
+                                        <span data-i18n="substep_sagehe_title">صوّت لـ SAGE-HE</span>
+                                    </div>
+                                    <div class="vote-project-label" data-i18n="vote_label_2">SAGE-HE</div>
+                                    <div class="vote-project-name" data-i18n="vote_name_2">AI-Powered Smart Institutional Governance Platform for Higher Education</div>
 
-                                <div class="btn-prompt">
-                                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-                                    <span data-i18n="btn_prompt_sagehe">اضغط هذا الزر للتصويت لـ SAGE-HE</span>
+                                    <div class="btn-prompt">
+                                        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                                        <span data-i18n="btn_prompt_sagehe">اضغط هذا الزر للتصويت لـ SAGE-HE</span>
+                                    </div>
+                                    <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026/Vote?jts=WU06EG#:~:text=AI%2DPowered%20Smart%20Institutional%20Governance%20Platform%20for%20Higher%20Education" target="_blank" rel="noopener noreferrer" class="step-btn click-here">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                        <span data-i18n="btn_vote_sagehe">اضغط هنا للتصويت لـ SAGE-HE</span>
+                                    </a>
                                 </div>
-                                <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026/Vote?jts=WU06EG#:~:text=AI%2DPowered%20Smart%20Institutional%20Governance%20Platform%20for%20Higher%20Education" target="_blank" rel="noopener noreferrer" class="step-btn click-here">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                    <span data-i18n="btn_vote_sagehe">اضغط هنا للتصويت لـ SAGE-HE</span>
-                                </a>
 
                                 <div class="preview-caption">
                                     <svg class="caption-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
@@ -1199,7 +1213,7 @@
                                 </div>
                                 <div class="ss-project qspark" style="margin-bottom: 10px;">
                                     <div><div class="ss-project-name" style="background: #FFEB3B; display: inline; padding: 1px 3px; color: #000;">AI-Powered Smart Institutional Governance Platform for Higher Education</div></div>
-                                    <div class="ss-vote-btn filled">Vote For This Project</div>
+                                    <div class="ss-vote-btn">Vote For This Project</div>
                                 </div>
 
                                 <div class="vote-step-item"><span class="vote-step-check">✓</span><span data-i18n="vote_done_hint_b">بمجرد الضغط يتم حساب تصويتك — <strong>لا يظهر أي تأكيد</strong>، فقط يعيدك لنفس الصفحة. اختفاء المشروع = نجاح التصويت.</span></div>
