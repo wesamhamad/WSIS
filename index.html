@@ -745,6 +745,7 @@
             background: linear-gradient(155deg, var(--sa-950) 0%, var(--sa-800) 50%, var(--sa-600) 100%);
             color: #fff;
             text-align: center;
+            padding-bottom: 40px;
         }
 
         .share-section .section-tag {
@@ -788,19 +789,11 @@
         .copy-feedback { display: none; margin-top: 12px; font-size: 0.85rem; color: var(--sa-200); }
         .copy-feedback.show { display: block; }
 
-        /* ===== FOOTER ===== */
-        .footer {
-            background: var(--gray-900);
-            color: rgba(255,255,255,0.55);
-            padding: 28px 20px;
-            text-align: center;
-            font-size: 0.82rem;
-        }
-
-        .footer-countdown { font-size: 0.9rem; color: var(--sa-300); font-weight: 700; margin-bottom: 8px; }
-        .footer a { color: var(--sa-300); text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-        .footer-note { margin-top: 10px; font-size: 0.72rem; opacity: 0.5; }
+        /* ===== FOOTER INFO (inside share section) ===== */
+        .footer-countdown { font-size: 0.9rem; color: #fff; font-weight: 700; margin-bottom: 8px; }
+        .footer-info-line { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+        .footer-info-line a { color: rgba(255,255,255,0.9); text-decoration: none; }
+        .footer-info-line a:hover { text-decoration: underline; }
 
         /* ===== ANIMATIONS ===== */
         .fade-in {
@@ -834,6 +827,8 @@
 
             .share-buttons { flex-direction: column; align-items: center; }
             .share-btn { width: 100%; max-width: 260px; justify-content: center; }
+
+            .hero { padding-top: 56px; }
         }
     </style>
 </head>
@@ -850,12 +845,7 @@
             <div class="hero-logos">
                 <img src="https://www.itu.int/net4/wsis/stocktaking/Content/img/logos/wsispp_w-min.png" alt="WSIS Prizes">
                 <div class="sep"></div>
-                <svg viewBox="0 0 200 60" height="60" xmlns="http://www.w3.org/2000/svg" aria-label="جامعة القصيم">
-                    <rect width="200" height="60" rx="8" fill="rgba(255,255,255,0.15)"/>
-                    <text x="100" y="24" text-anchor="middle" fill="white" font-family="'Tajawal', sans-serif" font-size="14" font-weight="700">QASSIM</text>
-                    <text x="100" y="40" text-anchor="middle" fill="white" font-family="'Tajawal', sans-serif" font-size="12" font-weight="500">UNIVERSITY</text>
-                    <text x="100" y="54" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="'Tajawal', sans-serif" font-size="11" font-weight="700">جامعة القصيم</text>
-                </svg>
+                <img src="qu-white-logo.svg" alt="جامعة القصيم" height="60">
             </div>
 
             <div class="hero-badge" data-i18n="hero_badge">🏆 مرشّح لجائزة WSIS Prizes 2026</div>
@@ -863,7 +853,7 @@
             <h1 data-i18n="hero_title">صوّت لمشروع QSpark في جائزة WSIS 2026</h1>
 
             <p class="hero-subtitle" data-i18n="hero_subtitle">
-                منصة التعلم الذكي من جامعة القصيم مرشحة لجائزة الأمم المتحدة WSIS 2026<br>صوتك يصنع الفرق — لا تستغرق العملية أكثر من دقيقتين
+                منصة QSpark من جامعة القصيم مرشحة لجائزة الأمم المتحدة WSIS 2026<br>صوتك يصنع الفرق — لا تستغرق العملية أكثر من دقيقتين
             </p>
 
             <a href="#guide" class="cta-button" data-i18n="cta_button">
@@ -900,7 +890,7 @@
                     <div class="info-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                     </div>
-                    <h3 data-i18n="info1_title">جائزة أممية</h3>
+                    <h3 data-i18n="info1_title">جائزة WSIS</h3>
                     <p data-i18n="info1_desc">تنظيم الاتحاد الدولي للاتصالات التابع للأمم المتحدة</p>
                 </div>
                 <div class="info-item fade-in">
@@ -1049,7 +1039,7 @@
                     <div class="step-num">٢</div>
                     <div class="step-body">
                         <h3 data-i18n="step2_title">تسجيل الدخول والتصويت</h3>
-                        <p data-i18n="step2_desc">بعد تفعيل حسابك، سجّل الدخول ثم اضغط الزر أدناه. عند فتح الصفحة، اضغط <strong>Ctrl+F</strong> (أو <strong>⌘+F</strong> في Mac) واكتب <strong>QSpark</strong> ثم اضغط Enter للانتقال مباشرة إلى المشروع:<br><strong style="color: var(--sa-700); font-size: 1.05rem;">QSpark - The Spark of Intelligent E-Learning</strong><br>ثم اضغط على الزر البرتقالي <strong style="color: #e65100;">"Vote For This Project"</strong> الذي بجانبه.</p>
+                        <p data-i18n="step2_desc">بعد تفعيل حسابك، سجّل الدخول ثم اضغط الزر أدناه. انتقل الى المشروع او ابحث عن هذا العنوان (بيظهر لك مضلل بالأصفر):<br><strong style="color: var(--sa-700); font-size: 1.05rem;">QSpark - The Spark of Intelligent E-Learning</strong><br>ثم اضغط على الزر البرتقالي <strong style="color: #e65100;">"Vote For This Project"</strong> الذي بجانبه.</p>
 
                         <!-- Voting Form Mockup with Dropdown -->
                         <div class="screenshot">
@@ -1238,20 +1228,14 @@
                 </button>
             </div>
             <p class="copy-feedback" id="copyFeedback">✓ تم نسخ الرابط!</p>
-        </div>
-    </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-countdown" id="footerCountdown">المتبقي على انتهاء التصويت: -- يوم</p>
-            <p>
+            <p class="footer-countdown" id="footerCountdown" style="margin-top: 32px;">المتبقي على انتهاء التصويت: -- يوم</p>
+            <p class="footer-info-line">
                 <span data-i18n="footer_info">لمزيد من المعلومات:</span>
                 <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026" target="_blank" rel="noopener noreferrer" data-i18n="footer_link">الموقع الرسمي لجوائز WSIS</a>
             </p>
-            <p class="footer-note" data-i18n="footer_note">صفحة دعم مجتمعية — ليست تابعة رسمياً للاتحاد الدولي للاتصالات أو الأمم المتحدة.</p>
         </div>
-    </footer>
+    </section>
 
     <script>
         function updateCountdown() {
@@ -1329,8 +1313,8 @@
                 btn_register: 'Register New Account',
                 btn_login: 'I have an account — Login',
                 step2_title: 'Login and Vote',
-                step2_desc: 'After activating your account, log in and click the button below. Once the page loads, press <strong>Ctrl+F</strong> (or <strong>⌘+F</strong> on Mac) and type <strong>QSpark</strong>, then press Enter to jump directly to the project:<br><strong style="color: var(--sa-700); font-size: 1.05rem;">QSpark - The Spark of Intelligent E-Learning</strong><br>Then click the orange <strong style="color: #e65100;">"Vote For This Project"</strong> button next to it.',
-                step2_tip: '<strong>Important:</strong> When the page opens, the browser will automatically scroll to the bottom. Scroll up slightly and you will find <strong>QSpark</strong>, or press <strong>Ctrl+F</strong> (or <strong>⌘+F</strong> on Mac) and type <strong>QSpark</strong> to jump directly to it.',
+                step2_desc: 'After activating your account, log in and click the button below. Navigate to the project or search for this title (it will appear highlighted in yellow):<br><strong style="color: var(--sa-700); font-size: 1.05rem;">QSpark - The Spark of Intelligent E-Learning</strong><br>Then click the orange <strong style="color: #e65100;">"Vote For This Project"</strong> button next to it.',
+                step2_tip: '<strong>Important:</strong> Navigate to the project or search for <strong>QSpark</strong> on the voting page.',
                 btn_vote: 'Open Voting Page',
                 step3_title: 'Confirm Your Vote',
                 step3_desc: 'Click <strong>MY VOTES</strong> in the top navigation to confirm that QSpark is listed in your votes.',
@@ -1340,7 +1324,6 @@
                 faq3_q: 'Is my data safe?', faq3_a: 'The website belongs to the United Nations (ITU) and your data is protected according to their security standards.',
                 faq4_q: 'I didn\'t find the activation email, what should I do?', faq4_a: 'Check your Spam/Junk folder. If the email doesn\'t arrive within 5 minutes, try registering again.',
                 share_tag: 'Spread the Word', share_title: 'Share with Your Friends', share_subtitle: 'Every vote brings us closer to winning — help us by sharing the link!',
-                footer_note: 'Community support page — not officially affiliated with the ITU or the United Nations.',
                 footer_info: 'For more information:', footer_link: 'WSIS Prizes Official Website'
             }
         };
