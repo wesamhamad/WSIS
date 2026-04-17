@@ -1,4 +1,3 @@
 # WSIS
 
-A new project created with Intent by Augment.
-# WSIS
+QSpark - WSIS Prizes 2026 Voting Guide
