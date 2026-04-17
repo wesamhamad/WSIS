@@ -453,16 +453,26 @@
         .btn-prompt {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.85rem;
-            font-weight: 700;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 800;
             color: var(--sa-700);
             margin-top: 6px;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
         .btn-prompt .arrow {
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             line-height: 1;
+            display: inline-block;
+            animation: btnArrowBounce 1.1s ease-in-out infinite;
+            transform-origin: center;
+        }
+        @keyframes btnArrowBounce {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(7px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .btn-prompt .arrow { animation: none; }
         }
 
         /* ===== VOTE BUTTONS CONTAINER ===== */
