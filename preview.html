@@ -951,8 +951,9 @@
             .step-card { flex-direction: column; gap: 10px; padding: 24px 0; }
             .screenshot { max-width: 100%; }
 
-            .step-btn { font-size: 0.85rem; padding: 9px 18px; }
-            .step-btn.click-here { font-size: 0.9rem; padding: 11px 16px; }
+            .step-btn { font-size: 0.8rem; padding: 9px 16px; gap: 6px; }
+            .step-btn svg { width: 14px; height: 14px; }
+            .step-btn.click-here { font-size: 0.82rem; padding: 11px 12px; white-space: nowrap; }
             .vote-action-block { padding: 12px 14px; }
             .vote-project-name { font-size: 0.85rem; line-height: 1.5; }
             .substep-title { font-size: 0.92rem; }
@@ -980,6 +981,7 @@
         }
 
         @media (max-width: 400px) {
+            .step-btn.click-here { font-size: 0.74rem; padding: 10px 8px; }
             .substep { padding: 8px 10px; }
             .ss-prizes-nav { font-size: 0.5rem; gap: 3px 6px; padding: 6px 6px; }
             .ss-body { padding: 10px 8px; }
