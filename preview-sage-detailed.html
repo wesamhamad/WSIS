@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صوّت لمشاريع جامعة القصيم — جوائز القمة العالمية لمجتمع المعلومات 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sa-50: #F3FCF6;
+            --sa-100: #DFF6E7;
+            --sa-200: #B8EACB;
+            --sa-300: #88D8AD;
+            --sa-400: #54C08A;
+            --sa-500: #25935F;
+            --sa-600: #1B8354;
+            --sa-700: #166A45;
+            --sa-800: #14573A;
+            --sa-900: #104631;
+            --sa-950: #092A1E;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D2D6DB;
+            --gray-400: #9DA4AE;
+            --gray-500: #6C737F;
+            --gray-600: #4D5761;
+            --gray-700: #384250;
+            --gray-800: #1F2A37;
+            --gray-900: #111927;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow: 0 4px 16px rgba(0,0,0,0.07);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --radius-lg: 18px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        /* ===== LANG TOGGLE ===== */
+        .lang-toggle {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            z-index: 999;
+            background: var(--white);
+            color: var(--sa-700);
+            border: 2px solid var(--sa-500);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            transition: all 0.3s;
+        }
+        .lang-toggle:hover { background: var(--sa-50); }
+        .lang-toggle svg { width: 16px; height: 16px; }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-800);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(155deg, var(--sa-950) 0%, var(--sa-800) 35%, var(--sa-600) 65%, var(--sa-500) 100%);
+            color: #fff;
+            padding: 44px 20px 52px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -30%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 65%);
+            border-radius: 50%;
+        }
+
+        .hero-content { position: relative; z-index: 1; }
+
+        .hero-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .hero-logos img {
+            height: 56px;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+
+        .hero-logos .sep {
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.25);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 7px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero h1 {
+            font-size: 2.1rem;
+            font-weight: 900;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            opacity: 0.85;
+            max-width: 560px;
+            margin: 0 auto 28px;
+            line-height: 1.9;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            color: var(--sa-800);
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            padding: 15px 40px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+        }
+
+        .cta-button svg { width: 20px; height: 20px; }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .countdown-item {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+            padding: 12px 16px;
+            border-radius: 10px;
+            min-width: 68px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .countdown-number {
+            font-size: 1.7rem;
+            font-weight: 900;
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-label { font-size: 0.72rem; opacity: 0.7; margin-top: 4px; }
+
+        /* ===== INFO BAR ===== */
+        .info-bar {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 28px 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .info-item { padding: 16px 12px; }
+
+        .info-icon {
+            width: 46px;
+            height: 46px;
+            background: var(--sa-50);
+            border: 1px solid var(--sa-100);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+        }
+
+        .info-icon svg { width: 22px; height: 22px; color: var(--sa-600); }
+
+        .info-item h3 { font-size: 0.95rem; font-weight: 700; color: var(--gray-800); margin-bottom: 4px; }
+        .info-item p { font-size: 0.82rem; color: var(--gray-500); line-height: 1.6; }
+
+        /* ===== SECTIONS ===== */
+        section { padding: 52px 20px; }
+
+        .section-header { text-align: center; margin-bottom: 36px; }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--sa-50);
+            color: var(--sa-700);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            border: 1px solid var(--sa-100);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--gray-900);
+            margin-bottom: 6px;
+        }
+
+        .section-subtitle {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* ===== ABOUT SAGE-HE (DETAILED) ===== */
+        .about-section { background: var(--gray-50); }
+
+        .about-lede {
+            max-width: 680px;
+            margin: 0 auto 8px;
+            text-align: center;
+            color: var(--gray-700);
+            font-size: 1rem;
+            line-height: 1.95;
+        }
+
+        .about-subheading {
+            text-align: center;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin: 32px 0 14px;
+        }
+
+        .about-audience {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .audience-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: 18px 14px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .audience-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--sa-50);
+            border: 1px solid var(--sa-100);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+        }
+
+        .audience-icon svg { width: 20px; height: 20px; color: var(--sa-600); }
+        .audience-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--gray-800); margin-bottom: 4px; }
+        .audience-card p { font-size: 0.8rem; color: var(--gray-500); line-height: 1.6; }
+
+        .about-impact {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .impact-item {
+            background: var(--sa-50);
+            border: 1px solid var(--sa-100);
+            border-radius: var(--radius);
+            padding: 14px 16px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .impact-item::before {
+            content: '';
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            background: var(--sa-500);
+            border-radius: 50%;
+            margin-top: 8px;
+        }
+
+        .impact-item p { font-size: 0.88rem; color: var(--gray-700); line-height: 1.7; font-weight: 500; }
+
+        .about-howto {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .howto-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: 18px 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .howto-num {
+            flex-shrink: 0;
+            width: 34px;
+            height: 34px;
+            background: var(--sa-500);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
+        .howto-body h4 { font-size: 0.98rem; font-weight: 700; color: var(--gray-800); margin-bottom: 4px; }
+        .howto-body p { font-size: 0.88rem; color: var(--gray-600); line-height: 1.8; }
+
+        .about-diagram {
+            max-width: 560px;
+            margin: 24px auto 0;
+            padding: 20px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .about-diagram svg { width: 100%; height: auto; display: block; }
+
+        /* ===== STEPS ===== */
+        .steps-section { background: var(--white); }
+
+        .steps-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            display: flex;
+            gap: 22px;
+            align-items: flex-start;
+            padding: 32px 0;
+        }
+
+        .step-card:not(:last-child) { border-bottom: 1px solid var(--gray-100); }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            background: var(--sa-500);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .step-card.highlight .step-num {
+            background: var(--sa-700);
+            box-shadow: 0 0 0 4px var(--sa-100);
+        }
+
+        .step-body { flex: 1; min-width: 0; }
+
+        .step-body h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--gray-800);
+            margin-bottom: 8px;
+        }
+
+        .step-body p {
+            color: var(--gray-600);
+            font-size: 0.92rem;
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+
+        .step-tip {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            background: var(--sa-50);
+            border: 1px solid var(--sa-100);
+            border-radius: 10px;
+            padding: 11px 14px;
+            font-size: 0.82rem;
+            color: var(--sa-800);
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+
+        .step-tip svg { flex-shrink: 0; width: 16px; height: 16px; margin-top: 3px; color: var(--sa-500); }
+
+        /* ===== ORG NAME WARNING ===== */
+        .org-warning {
+            background: #FEF3F2;
+            border: 2px solid #F04438;
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-bottom: 16px;
+        }
+
+        .org-warning-text {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #F04438;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .org-warning-text svg {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            color: #F04438;
+        }
+
+        .org-copy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #F04438;
+            color: #fff;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .org-copy-btn:hover {
+            background: #D92D20;
+            transform: translateY(-1px);
+        }
+
+        .org-copy-btn svg { width: 16px; height: 16px; }
+
+        .org-copy-feedback {
+            display: none;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #2E7D32;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .org-copy-feedback.show { display: inline; }
+
+        .step-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--sa-500);
+            color: #fff;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 700;
+            padding: 10px 26px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .step-btn:hover { background: var(--sa-600); transform: translateY(-1px); }
+        .step-btn svg { width: 16px; height: 16px; }
+
+        /* ===== SUB-STEPS ===== */
+        .substep {
+            border-inline-start: 3px solid var(--sa-300);
+            background: var(--sa-50);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 18px;
+        }
+        .substep-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--gray-800);
+            margin-bottom: 12px;
+        }
+        .substep-num {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--sa-600);
+            color: #fff;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+        .btn-prompt {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--sa-700);
+            margin-top: 6px;
+            margin-bottom: 8px;
+        }
+        .btn-prompt .arrow {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            color: var(--sa-600);
+            display: inline-block;
+            animation: btnArrowBounce 1.1s ease-in-out infinite;
+            transform-origin: center;
+        }
+        @keyframes btnArrowBounce {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(7px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .btn-prompt .arrow { animation: none; }
+        }
+
+        /* ===== VOTE BUTTONS CONTAINER ===== */
+        .vote-buttons-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .vote-project-card {
+            border-radius: var(--radius);
+            padding: 18px 20px;
+            border: 2px solid;
+        }
+
+        .vote-project-card.qspark-card {
+            border-color: var(--sa-400);
+            background: var(--sa-50);
+        }
+
+        .vote-project-card.sagehe-card {
+            border-color: var(--sa-400);
+            background: var(--sa-50);
+        }
+
+        .vote-project-label {
+            font-size: 0.82rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .vote-project-card.qspark-card .vote-project-label { color: var(--sa-700); }
+        .vote-project-card.sagehe-card .vote-project-label { color: var(--sa-700); }
+
+        .vote-action-block {
+            background: var(--white);
+            border: 2px solid var(--sa-400);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+        }
+        .vote-action-block .vote-project-name { margin-bottom: 8px; }
+        .vote-action-block .substep-title { margin-bottom: 6px !important; }
+
+        .vote-project-name {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+
+        .vote-both-note {
+            text-align: center;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--sa-700);
+            background: var(--sa-50);
+            border: 1px dashed var(--sa-300);
+            border-radius: 8px;
+            padding: 10px 16px;
+            margin-top: 4px;
+        }
+
+        .vote-steps-list {
+            margin-top: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .vote-step-item {
+            display: flex;
+            gap: 10px;
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: var(--gray-800);
+            align-items: flex-start;
+            background: var(--white);
+            border: 2px solid var(--sa-500);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-top: 14px;
+            box-shadow: 0 2px 8px rgba(37, 147, 95, 0.12);
+        }
+
+        .vote-step-check {
+            color: var(--sa-600);
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-top: 1px;
+            font-size: 1.05rem;
+        }
+
+        .step-btn.click-here {
+            width: 100%;
+            justify-content: center;
+            font-size: 1rem;
+            padding: 14px 24px;
+        }
+
+        /* ===== SCREENSHOT MOCKUPS ===== */
+        .screenshot {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 14px;
+            max-width: 420px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .screenshot.inline-mock {
+            max-width: 100%;
+            margin: 10px 0 14px;
+            box-shadow: none;
+            border-color: var(--gray-200);
+        }
+
+        /* Mini form field snippet (Organization name highlight) */
+        .mini-field {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin: 10px 0 14px;
+            max-width: 320px;
+            direction: ltr;
+            text-align: left;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .mini-field-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #E65100;
+            margin-bottom: 5px;
+            letter-spacing: 0.02em;
+        }
+
+        .mini-field-label .warn { color: #FF9800; margin-left: 4px; }
+
+        .mini-field-input {
+            background: #FFF8E1;
+            border: 2px solid #FF9800;
+            border-radius: 4px;
+            padding: 8px 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        /* Small caption above project preview */
+        .preview-caption {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--gray-700);
+            margin: 14px 0 8px;
+            font-weight: 700;
+        }
+        .preview-caption .caption-arrow {
+            width: 26px;
+            height: 26px;
+            color: var(--sa-600);
+        }
+
+        .ss-chrome {
+            background: var(--gray-100);
+            padding: 7px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--gray-200);
+            direction: ltr;
+        }
+
+        .ss-dots { display: flex; gap: 4px; }
+        .ss-dots span { width: 7px; height: 7px; border-radius: 50%; }
+        .ss-dots .d-r { background: #FF5F57; }
+        .ss-dots .d-y { background: #FFBD2E; }
+        .ss-dots .d-g { background: #28C840; }
+
+        .ss-url {
+            flex: 1;
+            background: var(--white);
+            border-radius: 5px;
+            padding: 4px 10px;
+            font-size: 0.62rem;
+            color: var(--gray-400);
+            font-family: -apple-system, sans-serif;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .ss-body { padding: 18px 20px; direction: ltr; }
+
+        /* Vote form mockup */
+        .ss-prizes-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 14px;
+            padding: 10px 14px;
+            font-size: 0.62rem;
+            color: var(--gray-500);
+            border-bottom: 1px solid var(--gray-200);
+            direction: ltr;
+        }
+
+        .ss-prizes-nav .active { color: var(--gray-800); font-weight: 700; }
+        .ss-prizes-nav .my-votes {
+            background: none;
+            border: none;
+            font-weight: 700;
+            text-decoration: underline;
+            color: var(--gray-800);
+            cursor: default;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .ss-project {
+            border: 1px solid var(--gray-200);
+            padding: 12px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            direction: ltr;
+        }
+
+        .ss-project > div:first-child { min-width: 0; flex: 1; }
+
+        .ss-project-name {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            overflow-wrap: anywhere;
+        }
+
+        .ss-project-desc {
+            font-size: 0.6rem;
+            color: var(--gray-400);
+            margin-top: 2px;
+            line-height: 1.5;
+            overflow-wrap: anywhere;
+        }
+
+        .ss-vote-btn {
+            border: 1px solid #e65100;
+            background: transparent;
+            color: #e65100;
+            padding: 6px 14px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            cursor: default;
+            white-space: nowrap;
+            border-radius: 4px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .ss-vote-btn.filled {
+            background: #e65100;
+            color: #fff;
+        }
+
+        .ss-project.qspark {
+            border-color: var(--gray-200);
+            background: #fff;
+        }
+
+        .ss-project.qspark .ss-project-name {
+            color: #000;
+        }
+
+        /* My Votes mockup */
+        .ss-myvotes-title {
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin: 12px 0 8px;
+            color: var(--gray-800);
+        }
+
+        .ss-myvotes-sub {
+            text-align: center;
+            font-size: 0.62rem;
+            color: var(--gray-500);
+            margin-bottom: 12px;
+        }
+
+        .ss-voted-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--gray-50);
+            border-radius: 6px;
+            direction: ltr;
+        }
+
+        .ss-voted-item > div:last-child { min-width: 0; flex: 1; }
+
+        .ss-cat-badge {
+            background: var(--gray-200);
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--gray-600);
+            text-align: center;
+            line-height: 1.3;
+            flex-shrink: 0;
+        }
+
+        .ss-voted-name {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            overflow-wrap: anywhere;
+        }
+
+        .ss-voted-desc {
+            font-size: 0.58rem;
+            color: var(--gray-400);
+            margin-top: 2px;
+            overflow-wrap: anywhere;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-list {
+            max-width: 680px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+            border: 1px solid var(--gray-100);
+        }
+
+        .faq-item:hover { box-shadow: var(--shadow); }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--gray-800);
+        }
+
+        .faq-question svg {
+            width: 16px; height: 16px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-right: 12px;
+            color: var(--gray-400);
+        }
+
+        .faq-item.open .faq-question svg { transform: rotate(180deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            color: var(--gray-600);
+            line-height: 1.9;
+            font-size: 0.9rem;
+        }
+
+        .faq-item.open .faq-answer { max-height: 200px; padding-top: 10px; }
+
+        /* ===== SHARE ===== */
+        .share-section {
+            background: linear-gradient(155deg, var(--sa-950) 0%, var(--sa-800) 50%, var(--sa-600) 100%);
+            color: #fff;
+            text-align: center;
+            padding-bottom: 40px;
+        }
+
+        .share-section .section-tag {
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.85);
+            border-color: rgba(255,255,255,0.12);
+        }
+
+        .share-section .section-title { color: #fff; }
+        .share-section .section-subtitle { color: rgba(255,255,255,0.7); }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 26px;
+            border-radius: 50px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .share-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+        .share-btn svg { width: 18px; height: 18px; }
+        .share-whatsapp { background: #25D366; color: #fff; }
+        .share-twitter { background: #000; color: #fff; }
+        .share-copy { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.15); }
+
+        .copy-feedback { display: none; margin-top: 12px; font-size: 0.85rem; color: var(--sa-200); }
+        .copy-feedback.show { display: block; }
+
+        /* ===== FOOTER INFO (inside share section) ===== */
+        .footer-countdown { font-size: 0.9rem; color: #fff; font-weight: 700; margin-bottom: 8px; }
+        .footer-info-line { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+        .footer-info-line a { color: rgba(255,255,255,0.9); text-decoration: none; }
+        .footer-info-line a:hover { text-decoration: underline; }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 680px) {
+            .hero { padding: 32px 16px 40px; }
+            .hero h1 { font-size: 1.5rem; }
+            .hero-subtitle { font-size: 0.92rem; }
+            .hero-logos img { height: 40px; }
+            .cta-button { font-size: 1rem; padding: 13px 30px; }
+            .countdown { gap: 8px; }
+            .countdown-item { padding: 10px 12px; min-width: 58px; }
+            .countdown-number { font-size: 1.3rem; }
+
+            .info-grid { grid-template-columns: 1fr !important; gap: 4px; }
+            .info-item { padding: 12px; }
+            .about-audience, .about-impact { grid-template-columns: 1fr; }
+            .howto-item { padding: 14px 16px; gap: 12px; }
+
+            section { padding: 36px 16px; }
+            .section-title { font-size: 1.3rem; }
+
+            .step-card { flex-direction: column; gap: 10px; padding: 24px 0; }
+            .screenshot { max-width: 100%; }
+
+            .step-btn { font-size: 0.8rem; padding: 9px 16px; gap: 6px; }
+            .step-btn svg { width: 14px; height: 14px; }
+            .step-btn.click-here { font-size: 0.82rem; padding: 11px 12px; white-space: nowrap; }
+            .vote-action-block { padding: 12px 14px; }
+            .vote-project-name { font-size: 0.85rem; line-height: 1.5; }
+            .substep-title { font-size: 0.92rem; }
+            .substep-num { width: 24px; height: 24px; font-size: 0.8rem; }
+            .btn-prompt { font-size: 0.82rem; }
+            .btn-prompt .arrow { width: 18px; height: 18px; }
+
+            .substep { padding: 10px 12px; margin-bottom: 14px; }
+            .ss-body { padding: 12px 10px; }
+            .ss-prizes-nav { font-size: 0.55rem; gap: 4px 8px; padding: 7px 8px; }
+            .ss-voted-item { padding: 8px; gap: 8px; align-items: flex-start; }
+            .ss-cat-badge { padding: 4px 6px; font-size: 0.52rem; }
+            .ss-voted-name { font-size: 0.66rem; line-height: 1.4; }
+            .ss-voted-desc { font-size: 0.54rem; line-height: 1.5; }
+            .ss-myvotes-title { font-size: 0.78rem; }
+            .ss-project { padding: 10px 12px; gap: 10px; }
+            .ss-chrome { padding: 6px 8px; gap: 6px; }
+            .ss-url { font-size: 0.55rem; padding: 3px 6px; }
+
+            .share-buttons { flex-direction: column; align-items: center; }
+            .share-btn { width: 100%; max-width: 260px; justify-content: center; }
+            .vote-project-card { padding: 14px 16px; }
+
+            .hero { padding-top: 56px; }
+        }
+
+        @media (max-width: 400px) {
+            .step-btn.click-here { font-size: 0.74rem; padding: 10px 8px; }
+            .substep { padding: 8px 10px; }
+            .ss-prizes-nav { font-size: 0.5rem; gap: 3px 6px; padding: 6px 6px; }
+            .ss-body { padding: 10px 8px; }
+            .ss-voted-item { padding: 7px; gap: 6px; }
+            .ss-voted-name { font-size: 0.62rem; }
+            .ss-voted-desc { font-size: 0.5rem; }
+            .ss-cat-badge { font-size: 0.5rem; padding: 4px 5px; }
+            .ss-myvotes-title { font-size: 0.72rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span id="langLabel">EN</span>
+    </button>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+        <div class="hero-content container">
+            <div class="hero-logos">
+                <img src="https://www.itu.int/net4/wsis/stocktaking/Content/img/logos/wsispp_w-min.png" alt="WSIS Prizes">
+                <div class="sep"></div>
+                <img src="qu-white-logo.svg" alt="جامعة القصيم" height="60">
+            </div>
+
+            <div class="hero-badge" data-i18n="hero_badge">مرشّح لجائزة WSIS Prizes 2026</div>
+
+            <h1 data-i18n="hero_title">صوّت لمشاريع جامعة القصيم في جائزة WSIS 2026</h1>
+
+            <p class="hero-subtitle" data-i18n="hero_subtitle">
+                مشروعا QSpark و SAGE-HE من جامعة القصيم مرشحان لجائزة الأمم المتحدة WSIS 2026<br>صوتك يصنع الفرق — لا تستغرق العملية أكثر من دقيقتين
+            </p>
+
+            <a href="#guide" class="cta-button" data-i18n="cta_button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+                ابدأ التصويت
+            </a>
+
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-days">--</span>
+                    <div class="countdown-label" data-i18n="cd_days">يوم</div>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-hours">--</span>
+                    <div class="countdown-label" data-i18n="cd_hours">ساعة</div>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-minutes">--</span>
+                    <div class="countdown-label" data-i18n="cd_mins">دقيقة</div>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-seconds">--</span>
+                    <div class="countdown-label" data-i18n="cd_secs">ثانية</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== INFO BAR ===== -->
+    <div class="info-bar">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-item fade-in">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3 data-i18n="info1_title">جائزة WSIS</h3>
+                    <p data-i18n="info1_desc">تنظيم الاتحاد الدولي للاتصالات التابع للأمم المتحدة</p>
+                </div>
+                <div class="info-item fade-in">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
+                    <h3 data-i18n="info2_title">QSpark — تعلم ذكي</h3>
+                    <p data-i18n="info2_desc">منصة تعلم تكيفي بالذكاء الاصطناعي من جامعة القصيم</p>
+                </div>
+                <div class="info-item fade-in">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 data-i18n="info3_title">SAGE-HE — حوكمة ذكية</h3>
+                    <p data-i18n="info3_desc">منصة حوكمة مؤسسية ذكية بالذكاء الاصطناعي للتعليم العالي من جامعة القصيم</p>
+                </div>
+                <div class="info-item fade-in">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 data-i18n="info4_title">تصويت آمن</h3>
+                    <p data-i18n="info4_desc">عبر الموقع الرسمي — دقيقتان فقط من وقتك</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ABOUT SAGE-HE ===== -->
+    <section id="about-sage" class="about-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    <span data-i18n="about_tag">نظرة عامة</span>
+                </div>
+                <h2 class="section-title" data-i18n="about_title">ما هي منصة SAGE-HE؟</h2>
+                <p class="section-subtitle" data-i18n="about_subtitle">حوكمة مؤسسية ذكية على مدار الساعة</p>
+            </div>
+
+            <p class="about-lede fade-in" data-i18n="about_lede">منصة حوكمة مؤسسية ذكية مدعومة بالذكاء الاصطناعي من جامعة القصيم، تعمل كمحرك تواصل موحّد وموثوق على مدار الساعة بين جميع منسوبي الجامعة والجهات الداخلية المختلفة. تعتمد على بنية متعددة الوكلاء (Multi-Agent AI) تمثّل كل جهة (عمادات مساندة، كليات أكاديمية، إدارات خدمية) وتقدّم إجابات دقيقة مستندة إلى السياسات واللوائح المعتمدة.</p>
+
+            <div class="about-diagram fade-in" aria-hidden="true">
+                <svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="280" y1="130" x2="100" y2="60" stroke="#88D8AD" stroke-width="2" stroke-dasharray="4 4"/>
+                    <line x1="280" y1="130" x2="460" y2="60" stroke="#88D8AD" stroke-width="2" stroke-dasharray="4 4"/>
+                    <line x1="280" y1="130" x2="100" y2="200" stroke="#88D8AD" stroke-width="2" stroke-dasharray="4 4"/>
+                    <line x1="280" y1="130" x2="460" y2="200" stroke="#88D8AD" stroke-width="2" stroke-dasharray="4 4"/>
+
+                    <rect x="200" y="100" width="160" height="62" rx="14" fill="#166A45"/>
+                    <text x="280" y="128" text-anchor="middle" fill="#fff" font-family="Tajawal, sans-serif" font-size="14" font-weight="800">SAGE-HE Core</text>
+                    <text x="280" y="148" text-anchor="middle" fill="#DFF6E7" font-family="Tajawal, sans-serif" font-size="11">Multi-Agent AI</text>
+
+                    <circle cx="80" cy="60" r="42" fill="#DFF6E7" stroke="#88D8AD" stroke-width="1.5"/>
+                    <text x="80" y="58" text-anchor="middle" fill="#14573A" font-family="Tajawal, sans-serif" font-size="11" font-weight="700">وكيل</text>
+                    <text x="80" y="74" text-anchor="middle" fill="#14573A" font-family="Tajawal, sans-serif" font-size="11" font-weight="700">الطلبة</text>
+
+                    <circle cx="480" cy="60" r="42" fill="#DFF6E7" stroke="#88D8AD" stroke-width="1.5"/>
+                    <text x="480" y="58" text-anchor="middle" fill="#14573A" font-family="Tajawal, sans-serif" font-size="11" font-weight="700">وكيل</text>
+                    <text x="480" y="74" text-anchor="middle" fill="#14573A" font-family="Tajawal, sans-serif" font-size="11" font-weight="700">الموظفين</text>
+
+                    <circle cx="80" cy="200" r="42" fill="#DFF6E7" stroke="#88D8AD" stroke-width="1.5"/>
+                    <text x="80" y="198" text-anchor="middle" fill="#14573A" font-family="Tajawal, sans-serif" font-size="11" font-weight="700">وكيل</text>
+                    <text x="80" y="214" text-anchor="middle" fill="#14573A" font-family="Tajawal, sans-serif" font-size="11" font-weight="700">الكليات</text>
+
+                    <circle cx="480" cy="200" r="42" fill="#DFF6E7" stroke="#88D8AD" stroke-width="1.5"/>
+                    <text x="480" y="198" text-anchor="middle" fill="#14573A" font-family="Tajawal, sans-serif" font-size="11" font-weight="700">وكيل</text>
+                    <text x="480" y="214" text-anchor="middle" fill="#14573A" font-family="Tajawal, sans-serif" font-size="11" font-weight="700">المجلس العلمي</text>
+                </svg>
+            </div>
+
+            <h3 class="about-subheading fade-in" data-i18n="about_audience_heading">من يستفيد من المنصة؟</h3>
+            <div class="about-audience fade-in">
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    </div>
+                    <h4 data-i18n="audience1_title">الطلبة</h4>
+                    <p data-i18n="audience1_desc">إجابات لحظية عن استفسارات القبول والتسجيل وخدمات الطلبة.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <h4 data-i18n="audience2_title">الموظفون</h4>
+                    <p data-i18n="audience2_desc">تواصل فعّال مع الإدارة العامة للموارد البشرية وفق اللوائح المعتمدة.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </div>
+                    <h4 data-i18n="audience3_title">أعضاء هيئة التدريس</h4>
+                    <p data-i18n="audience3_desc">تواصل مباشر مع أمانة المجلس العلمي وخدمات أعضاء هيئة التدريس.</p>
+                </div>
+            </div>
+
+            <h3 class="about-subheading fade-in" data-i18n="about_howto_heading">كيف يتم تفعيله؟</h3>
+            <div class="about-howto fade-in">
+                <div class="howto-item">
+                    <div class="howto-num">١</div>
+                    <div class="howto-body">
+                        <h4 data-i18n="howto1_title">دعم الطلبة — عمادة القبول والتسجيل</h4>
+                        <p data-i18n="howto1_desc">الإجابة على استفسارات الطلبة المرتبطة بالقبول والتسجيل لحظياً، من خلال ربط الأنظمة الداخلية بأدوات ذكاء اصطناعي توفّر تواصلاً وفق بيانات المستفيد والأنظمة واللوائح المعتمدة.</p>
+                    </div>
+                </div>
+                <div class="howto-item">
+                    <div class="howto-num">٢</div>
+                    <div class="howto-body">
+                        <h4 data-i18n="howto2_title">دعم الموظفين — الموارد البشرية</h4>
+                        <p data-i18n="howto2_desc">تواصل الموظفين مع الإدارة العامة للموارد البشرية فيما يرتبط بهم من خدمات، وفق بيانات المستفيد والأنظمة واللوائح المعتمدة.</p>
+                    </div>
+                </div>
+                <div class="howto-item">
+                    <div class="howto-num">٣</div>
+                    <div class="howto-body">
+                        <h4 data-i18n="howto3_title">دعم أعضاء هيئة التدريس — أمانة المجلس العلمي</h4>
+                        <p data-i18n="howto3_desc">تواصل أعضاء هيئة التدريس مع أمانة المجلس العلمي فيما يرتبط بهم من خدمات، وفق بيانات المستفيد والأنظمة واللوائح المعتمدة. (تم تطبيقه من خلال منتج د. دليل)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="about-subheading fade-in" data-i18n="about_impact_heading">الأثر المتوقع</h3>
+            <div class="about-impact fade-in">
+                <div class="impact-item"><p data-i18n="impact1">رفع فعالية التواصل المؤسسي وتعزيز كفاءة الاستجابة.</p></div>
+                <div class="impact-item"><p data-i18n="impact2">توحيد مصادر المعلومات وضمان دقتها ومصداقيتها.</p></div>
+                <div class="impact-item"><p data-i18n="impact3">تعزيز الشفافية والمساءلة في تقديم الخدمات الجامعية.</p></div>
+                <div class="impact-item"><p data-i18n="impact4">تكريس ثقافة الحوكمة الرقمية في مسيرة التحول الرقمي.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STEPS ===== -->
+    <section id="guide" class="steps-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    <span data-i18n="steps_tag">٣ خطوات بسيطة</span>
+                </div>
+                <h2 class="section-title" data-i18n="steps_title">كيف تصوّت؟</h2>
+                <p class="section-subtitle" data-i18n="steps_subtitle">اتّبع الخطوات التالية — لن تستغرق أكثر من دقيقتين</p>
+            </div>
+
+            <div class="steps-flow">
+
+                <!-- STEP 1: Register -->
+                <div class="step-card fade-in">
+                    <div class="step-num">١</div>
+                    <div class="step-body">
+                        <h3 data-i18n="step1_title">حساب الدخول للموقع</h3>
+                        <p data-i18n="step1_intro">اختر حالتك — كل خيار له خطواته الخاصة:</p>
+
+                        <!-- Sub-step A: Register (new account) -->
+                        <div class="substep">
+                            <div class="substep-title">
+                                <span class="substep-num">أ</span>
+                                <span data-i18n="substep_register_title">ليس لديك حساب؟ سجّل حساباً جديداً</span>
+                            </div>
+
+                            <div class="btn-prompt">
+                                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                                <span data-i18n="btn_prompt_register">اضغط على هذا الزر لفتح صفحة التسجيل</span>
+                            </div>
+                            <a href="https://www.itu.int/net4/wsis/stocktaking/Account/Register" target="_blank" rel="noopener noreferrer" class="step-btn click-here" style="margin-bottom: 14px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                                <span data-i18n="btn_register">سجّل حساب جديد</span>
+                            </a>
+
+                            <!-- Organization Name Warning (registration-specific) -->
+                            <div class="org-warning">
+                                <div class="org-warning-text">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                    <span data-i18n="org_warning">حقل <strong>Organization name</strong> مهم جداً — تركه فارغاً قد يُلغي تصويتك:<br>• منسوبي جامعة القصيم → <strong>Qassim University</strong><br>• غير ذلك → اسم جهتك</span>
+                                </div>
+                                <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
+                                    <button class="org-copy-btn" onclick="copyOrgName()">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                        Qassim University
+                                    </button>
+                                    <span class="org-copy-feedback" id="orgCopyFeedback" data-i18n="org_copied">تم النسخ!</span>
+                                </div>
+
+                                <!-- Mini form field snippet -->
+                                <div class="mini-field">
+                                    <div class="mini-field-label">Organization name <span class="warn">⚠</span></div>
+                                    <div class="mini-field-input">Qassim University</div>
+                                </div>
+                            </div>
+
+                            <div class="step-tip">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                                <span data-i18n="step1_tip">تصلك رسالة التفعيل على بريدك الإلكتروني — يُرجى التحقّق من مجلد <strong>Spam/Junk</strong> في حال لم تظهر.</span>
+                            </div>
+
+                            <div class="step-tip" style="background: #FFF8E1; border-color: #FFE082; color: #8A5A00; margin-bottom: 0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                <span data-i18n="step1_traffic_tip">إذا ظهر خطأ <strong>"Please try again"</strong> (أثناء التسجيل أو إعادة تعيين كلمة المرور) — يُرجى إعادة المحاولة.</span>
+                            </div>
+                        </div>
+
+                        <!-- Sub-step B: Login (existing account) -->
+                        <div class="substep" style="margin-bottom: 0;">
+                            <div class="substep-title">
+                                <span class="substep-num">ب</span>
+                                <span data-i18n="substep_login_title">لديك حساب بالفعل؟ سجّل الدخول مباشرة</span>
+                            </div>
+
+                            <div class="btn-prompt">
+                                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                                <span data-i18n="btn_prompt_login">اضغط على هذا الزر لتسجيل الدخول</span>
+                            </div>
+                            <a href="https://www.itu.int/net4/wsis/stocktaking/Account/Login" target="_blank" rel="noopener noreferrer" class="step-btn click-here" style="background: var(--white); color: var(--sa-600); border: 2px solid var(--sa-500);">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                                <span data-i18n="btn_login">لديّ حساب — تسجيل الدخول</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Vote -->
+                <div class="step-card highlight fade-in">
+                    <div class="step-num">٢</div>
+                    <div class="step-body">
+                        <h3 data-i18n="step2_title">التصويت</h3>
+
+                        <div class="vote-buttons-group">
+                            <!-- QSpark Vote -->
+                            <div class="vote-project-card qspark-card">
+                                <div class="vote-action-block">
+                                    <div class="substep-title">
+                                        <span class="substep-num">أ</span>
+                                        <span data-i18n="substep_qspark_title">صوّت لـ QSpark</span>
+                                    </div>
+                                    <div class="vote-project-label" data-i18n="vote_label_1">QSpark</div>
+                                    <div class="vote-project-name" data-i18n="vote_name_1">QSpark - The Spark of Intelligent E-Learning</div>
+
+                                    <div class="btn-prompt">
+                                        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                                        <span data-i18n="btn_prompt_qspark">اضغط على هذا الزر للتصويت لـ QSpark</span>
+                                    </div>
+                                    <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026/Vote?jts=9X09NR&id=17&page=9#:~:text=QSpark%20%2D%20The%20Spark%20of%20Intelligent%20E%2DLearning" target="_blank" rel="noopener noreferrer" class="step-btn click-here">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                        <span data-i18n="btn_vote_qspark">اضغط هنا للتصويت لـ QSpark</span>
+                                    </a>
+                                </div>
+
+                                <div class="preview-caption">
+                                    <svg class="caption-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                                    <span data-i18n="preview_caption">ستجد المشروع بهذا الشكل — اضغط على الزر البرتقالي</span>
+                                </div>
+                                <div class="ss-project qspark" style="margin-bottom: 10px;">
+                                    <div><div class="ss-project-name" style="background: #FFEB3B; display: inline; padding: 1px 3px; color: #000;">QSpark – The Spark of Intelligent E-Learning</div></div>
+                                    <div class="ss-vote-btn">Vote For This Project</div>
+                                </div>
+
+                                <div class="vote-step-item"><span class="vote-step-check">✓</span><span data-i18n="vote_done_hint">بمجرد الضغط يُحتسب تصويتك مباشرةً — <strong>لن يظهر أي تأكيد</strong>، بل يُعيدك إلى الصفحة ذاتها. اختفاء المشروع من القائمة يعني نجاح التصويت.</span></div>
+                            </div>
+
+                            <!-- SAGE-HE Vote -->
+                            <div class="vote-project-card sagehe-card">
+                                <div class="vote-action-block">
+                                    <div class="substep-title">
+                                        <span class="substep-num">ب</span>
+                                        <span data-i18n="substep_sagehe_title">صوّت لـ SAGE-HE</span>
+                                    </div>
+                                    <div class="vote-project-label" data-i18n="vote_label_2">SAGE-HE</div>
+                                    <div class="vote-project-name" data-i18n="vote_name_2">AI-Powered Smart Institutional Governance Platform for Higher Education</div>
+
+                                    <div class="btn-prompt">
+                                        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                                        <span data-i18n="btn_prompt_sagehe">اضغط على هذا الزر للتصويت لـ SAGE-HE</span>
+                                    </div>
+                                    <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026/Vote?jts=WU06EG#:~:text=AI%2DPowered%20Smart%20Institutional%20Governance%20Platform%20for%20Higher%20Education" target="_blank" rel="noopener noreferrer" class="step-btn click-here">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                        <span data-i18n="btn_vote_sagehe">اضغط هنا للتصويت لـ SAGE-HE</span>
+                                    </a>
+                                </div>
+
+                                <div class="preview-caption">
+                                    <svg class="caption-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                                    <span data-i18n="preview_caption_b">ستجد المشروع بهذا الشكل — اضغط على الزر البرتقالي</span>
+                                </div>
+                                <div class="ss-project qspark" style="margin-bottom: 10px;">
+                                    <div><div class="ss-project-name" style="background: #FFEB3B; display: inline; padding: 1px 3px; color: #000;">AI-Powered Smart Institutional Governance Platform for Higher Education</div></div>
+                                    <div class="ss-vote-btn">Vote For This Project</div>
+                                </div>
+
+                                <div class="vote-step-item"><span class="vote-step-check">✓</span><span data-i18n="vote_done_hint_b">بمجرد الضغط يُحتسب تصويتك مباشرةً — <strong>لن يظهر أي تأكيد</strong>، بل يُعيدك إلى الصفحة ذاتها. اختفاء المشروع من القائمة يعني نجاح التصويت.</span></div>
+                            </div>
+
+                            <div class="vote-both-note" data-i18n="vote_both_note">بعد التصويت، انتقل إلى الخطوة ٣ للتأكّد من ظهور المشروعَين في قائمة <strong>My Votes</strong>.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Confirm -->
+                <div class="step-card fade-in">
+                    <div class="step-num">٣</div>
+                    <div class="step-body">
+                        <h3 data-i18n="step3_title">تأكد من تصويتك</h3>
+                        <p data-i18n="step3_desc">اضغط على <strong>MY VOTES</strong> في القائمة العلوية للتأكّد من أن كلا المشروعين — <strong>QSpark</strong> (الفئة 9) و <strong>SAGE-HE</strong> (الفئة 1) — مُسجّلان في قائمة أصواتك.</p>
+
+                        <div class="substep" style="margin-bottom: 0;">
+                            <div class="btn-prompt">
+                                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                                <span data-i18n="btn_prompt_myvotes">اضغط على هذا الزر لفتح قائمة تصويتاتك</span>
+                            </div>
+                            <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026/MyVotes?jts=VJREMF" target="_blank" rel="noopener noreferrer" class="step-btn click-here" style="margin-bottom: 14px;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            <span data-i18n="btn_myvotes">افتح صفحة تصويتاتي (My Votes)</span>
+                        </a>
+
+                        <!-- My Votes Mockup -->
+                        <div class="screenshot">
+                            <div class="ss-chrome">
+                                <div class="ss-dots"><span class="d-r"></span><span class="d-y"></span><span class="d-g"></span></div>
+                                <div class="ss-url">itu.int/net4/wsis/stocktaking/Prizes/2026/MyVotes?jts=VJREMF</div>
+                            </div>
+                            <div class="ss-prizes-nav">
+                                <span>SUBMIT</span>
+                                <span>NOMINATED PROJECTS</span>
+                                <span>VOTE</span>
+                                <span>CHAMPION PROJECTS</span>
+                                <span>|</span>
+                                <span class="my-votes" style="text-decoration: underline;">MY VOTES</span>
+                                <span>MY ACCOUNT</span>
+                            </div>
+                            <div class="ss-body">
+                                <div class="ss-myvotes-title">Completed Votes (2/18 Votes)</div>
+                                <div class="ss-voted-item" style="margin-bottom: 8px;">
+                                    <div class="ss-cat-badge">Category<br>9</div>
+                                    <div>
+                                        <div class="ss-voted-name">QSpark - The Spark of Intelligent E-Learning</div>
+                                        <div class="ss-voted-desc">QSpark is an AI-powered adaptive learning and academic analytics platform developed by the Deanship of E-Learning and Information Technology at Qassim University...</div>
+                                    </div>
+                                </div>
+                                <div class="ss-voted-item">
+                                    <div class="ss-cat-badge" style="background: var(--sa-50); color: var(--sa-700);">Category<br>1</div>
+                                    <div>
+                                        <div class="ss-voted-name">AI-Powered Smart Institutional Governance Platform for Higher Education</div>
+                                        <div class="ss-voted-desc">SAGE-HE is an AI-powered smart institutional governance platform for higher education developed at Qassim University...</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <span data-i18n="faq_tag">أسئلة شائعة</span>
+                </div>
+                <h2 class="section-title" data-i18n="faq_title">هل لديك استفسار؟</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span data-i18n="faq1_q">هل التصويت آمن ومضمون؟</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq1_a">نعم، كل ما تحتاجه هو إنشاء حساب على موقع الاتحاد الدولي للاتصالات.</div>
+                </div>
+
+                <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span data-i18n="faq2_q">كم مرة يمكنني التصويت؟</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq2_a">يُسمح بصوت واحد لكل فئة في كل حساب. ولكن يمكنك إنشاء أكثر من حساب باستخدام عناوين بريد إلكتروني مختلفة والتصويت من كل حساب — كل صوت إضافي يُحدث فرقًا!</div>
+                </div>
+
+                <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span data-i18n="faq3_q">هل بياناتي آمنة؟</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq3_a">الموقع تابع لمنظمة الأمم المتحدة (ITU) وبياناتك محمية وفق معاييرهم الأمنية.</div>
+                </div>
+
+                <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span data-i18n="faq4_q">لم أجد رسالة التفعيل، ما الحل؟</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq4_a">تحقّق من مجلد البريد غير المرغوب فيه (Spam/Junk). إذا لم تصل الرسالة خلال 5 دقائق، أعد محاولة التسجيل مرة أخرى.</div>
+                </div>
+
+                <div class="faq-item fade-in" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span data-i18n="faq5_q">هل التصويت مجاني؟</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq5_a">نعم، التصويت وإنشاء الحساب مجاني بالكامل ولا يتطلب أي رسوم.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SHARE ===== -->
+    <section class="share-section" id="share">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    <span data-i18n="share_tag">انشر الدعم</span>
+                </div>
+                <h2 class="section-title" data-i18n="share_title">شارك مع أصدقائك</h2>
+                <p class="section-subtitle" data-i18n="share_subtitle">كل صوت يُقرّبنا من الفوز — ساعدنا بنشر الرابط!</p>
+            </div>
+
+            <div class="share-buttons fade-in">
+                <button class="share-btn share-whatsapp" onclick="shareWhatsApp()">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    واتساب <span style="font-size:0.72rem; opacity:0.7;">(WhatsApp)</span>
+                </button>
+
+                <button class="share-btn share-twitter" onclick="shareTwitter()">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    X
+                </button>
+
+                <button class="share-btn share-copy" onclick="copyLink()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    نسخ الرابط <span style="font-size:0.72rem; opacity:0.7;">(Copy Link)</span>
+                </button>
+            </div>
+            <p class="copy-feedback" id="copyFeedback">✓ تم نسخ الرابط!</p>
+
+            <p class="footer-countdown" id="footerCountdown" style="margin-top: 32px;">المتبقي على انتهاء التصويت: -- يوم</p>
+            <p class="footer-info-line">
+                <span data-i18n="footer_info">لمزيد من المعلومات:</span>
+                <a href="https://www.itu.int/net4/wsis/stocktaking/Prizes/2026" target="_blank" rel="noopener noreferrer" data-i18n="footer_link">الموقع الرسمي لجوائز WSIS</a>
+            </p>
+        </div>
+    </section>
+
+    <script>
+        function updateCountdown() {
+            var deadline = new Date('2026-05-03T23:59:59').getTime();
+            var now = new Date().getTime();
+            var diff = deadline - now;
+            if (diff <= 0) {
+                document.getElementById('countdown-days').textContent = '0';
+                document.getElementById('countdown-hours').textContent = '0';
+                document.getElementById('countdown-minutes').textContent = '0';
+                document.getElementById('countdown-seconds').textContent = '0';
+                document.getElementById('footerCountdown').textContent = 'انتهت فترة التصويت.';
+                return;
+            }
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('countdown-days').textContent = d;
+            document.getElementById('countdown-hours').textContent = h;
+            document.getElementById('countdown-minutes').textContent = m;
+            document.getElementById('countdown-seconds').textContent = s;
+            document.getElementById('footerCountdown').textContent = 'المتبقي على انتهاء التصويت: ' + d + ' يوم و ' + h + ' ساعة';
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        function toggleFaq(item) {
+            var wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(function(el) { el.classList.remove('open'); });
+            if (!wasOpen) item.classList.add('open');
+        }
+
+        function getShareUrl() { return window.location.href; }
+
+        function shareWhatsApp() {
+            var msg = 'ادعم مشاريع جامعة القصيم (QSpark و SAGE-HE) في جائزة القمة العالمية لمجتمع المعلومات WSIS 2026! التصويت لا يستغرق أكثر من دقيقتين\n\n' + getShareUrl();
+            window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        function shareTwitter() {
+            var text = 'ادعم مشاريع جامعة القصيم (QSpark و SAGE-HE) في جائزة WSIS 2026! صوتك يصنع الفرق';
+            window.open('https://x.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(getShareUrl()), '_blank');
+        }
+
+        function copyOrgName() {
+            navigator.clipboard.writeText('Qassim University').then(function() {
+                var fb = document.getElementById('orgCopyFeedback');
+                fb.classList.add('show');
+                setTimeout(function() { fb.classList.remove('show'); }, 2000);
+            });
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                var fb = document.getElementById('copyFeedback');
+                fb.classList.add('show');
+                setTimeout(function() { fb.classList.remove('show'); }, 2000);
+            });
+        }
+
+        var obs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
+
+        /* ===== TRANSLATION ===== */
+        var currentLang = 'ar';
+        var translations = {
+            en: {
+                hero_badge: 'Nominated for WSIS Prizes 2026',
+                hero_title: 'Vote for Qassim University Projects at WSIS Prizes 2026',
+                hero_subtitle: 'QSpark and SAGE-HE from Qassim University are nominated for the UN WSIS Prize 2026<br>Your vote makes the difference — it only takes 2 minutes',
+                cta_button: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Start Voting',
+                cd_days: 'Days', cd_hours: 'Hours', cd_mins: 'Minutes', cd_secs: 'Seconds',
+                info1_title: 'UN Award', info1_desc: 'Organized by the International Telecommunication Union (ITU), a United Nations agency',
+                info2_title: 'QSpark — Smart Learning', info2_desc: 'AI-powered adaptive learning platform from Qassim University',
+                info3_title: 'SAGE-HE — Smart Governance', info3_desc: 'AI-powered smart institutional governance platform for higher education from Qassim University',
+                info4_title: 'Secure Voting', info4_desc: 'Through the official website — only 2 minutes of your time',
+                about_tag: 'Overview',
+                about_title: 'What is SAGE-HE?',
+                about_subtitle: 'Smart institutional governance, 24/7',
+                about_lede: 'An AI-powered institutional governance platform from Qassim University that acts as a unified, trusted 24/7 communication engine between all university members and internal entities. It leverages a multi-agent AI architecture representing each unit (support deanships, academic colleges, service administrations), delivering precise answers grounded in approved policies and regulations.',
+                about_audience_heading: 'Who benefits?',
+                audience1_title: 'Students', audience1_desc: 'Instant answers to admission, registration, and student service inquiries.',
+                audience2_title: 'Staff', audience2_desc: 'Effective communication with HR aligned to approved regulations.',
+                audience3_title: 'Faculty', audience3_desc: 'Direct channel to the Scientific Council and faculty services.',
+                about_howto_heading: 'How is it activated?',
+                howto1_title: 'Students — Admissions & Registration',
+                howto1_desc: 'Student admission and registration queries answered instantly by connecting internal systems with AI agents grounded in beneficiary data and approved regulations.',
+                howto2_title: 'Staff — General HR Administration',
+                howto2_desc: 'Staff-facing services via an agent representing the HR administration, responding per beneficiary data and approved regulations.',
+                howto3_title: 'Faculty — Scientific Council Secretariat',
+                howto3_desc: 'Faculty services via an agent representing the Scientific Council Secretariat, grounded in approved policies and regulations. (Implemented through the Dr. Daleel product.)',
+                about_impact_heading: 'Expected Impact',
+                impact1: 'Elevate institutional communication and response efficiency.',
+                impact2: 'Unify information sources and guarantee accuracy and credibility.',
+                impact3: 'Enhance transparency and accountability in university services.',
+                impact4: 'Anchor a digital governance culture within the transformation journey.',
+                steps_tag: '3 Simple Steps', steps_title: 'How to Vote?', steps_subtitle: 'Follow these steps — it won\'t take more than 2 minutes',
+                step1_title: 'Account & Login',
+                step1_intro: 'Pick your situation — each path has its own steps:',
+                substep_register_title: 'No account? Register a new one',
+                substep_login_title: 'Already have an account? Log in',
+                btn_prompt_register: 'Click this button to open the registration page',
+                btn_prompt_login: 'Click this button to log in',
+                org_warning: 'The <strong>Organization name</strong> field is critical — leaving it empty may invalidate your vote:<br>• Qassim University members → <strong>Qassim University</strong><br>• Others → your own organization name',
+                org_copied: 'Copied!',
+                step1_tip: 'The activation email will arrive in your inbox — check <strong>Spam/Junk</strong> if you don\'t see it.',
+                step1_traffic_tip: 'If a <strong>"Please try again"</strong> error appears (registration or password reset) — just try again.',
+                btn_register: 'Register New Account',
+                btn_login: 'I have an account — Login',
+                step2_title: 'Vote',
+                substep_qspark_title: 'Vote for QSpark',
+                substep_sagehe_title: 'Vote for SAGE-HE',
+                btn_prompt_qspark: 'Click this button to vote for QSpark',
+                btn_prompt_sagehe: 'Click this button to vote for SAGE-HE',
+                btn_prompt_myvotes: 'Click this button to open your votes list',
+                btn_vote_qspark: 'Click Here to Vote for QSpark',
+                btn_vote_sagehe: 'Click Here to Vote for SAGE-HE',
+                vote_label_1: 'QSpark',
+                vote_label_2: 'SAGE-HE',
+                vote_name_1: 'QSpark - The Spark of Intelligent E-Learning',
+                vote_name_2: 'AI-Powered Smart Institutional Governance Platform for Higher Education',
+                preview_caption: 'You\'ll find the project like this — click the orange button',
+                preview_caption_b: 'You\'ll find the project like this — click the orange button',
+                vote_done_hint: 'Your vote is counted instantly — <strong>no confirmation appears</strong>, it just returns you to the same page. The project disappearing = successful vote.',
+                vote_done_hint_b: 'Your vote is counted instantly — <strong>no confirmation appears</strong>, it just returns you to the same page. The project disappearing = successful vote.',
+                vote_both_note: 'After voting → Step 3 to verify in the <strong>My Votes</strong> list.',
+                step3_title: 'Confirm Your Vote',
+                step3_desc: 'Click <strong>MY VOTES</strong> in the top navigation to confirm that both <strong>QSpark</strong> (Category 9) and <strong>SAGE-HE</strong> (Category 1) are listed in your votes.',
+                btn_myvotes: 'Open My Votes Page',
+                faq_tag: 'FAQ', faq_title: 'Have a Question?',
+                faq1_q: 'Is voting safe and guaranteed?', faq1_a: 'Yes, all you need is to create an account on the ITU website.',
+                faq2_q: 'How many times can I vote?', faq2_a: 'One vote per category per account is allowed. However, you can create multiple accounts using different email addresses and vote from each account — every additional vote makes a difference!',
+                faq3_q: 'Is my data safe?', faq3_a: 'The website belongs to the United Nations (ITU) and your data is protected according to their security standards.',
+                faq4_q: 'I didn\'t find the activation email, what should I do?', faq4_a: 'Check your Spam/Junk folder. If the email doesn\'t arrive within 5 minutes, try registering again.',
+                faq5_q: 'Is voting free?', faq5_a: 'Yes, voting and creating an account are completely free and do not require any fees.',
+                share_tag: 'Spread the Word', share_title: 'Share with Your Friends', share_subtitle: 'Every vote brings us closer to winning — help us by sharing the link!',
+                footer_info: 'For more information:', footer_link: 'WSIS Prizes Official Website'
+            }
+        };
+
+        // Store original Arabic HTML
+        var arData = {};
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            arData[el.getAttribute('data-i18n')] = el.innerHTML;
+        });
+
+        function toggleLanguage() {
+            if (currentLang === 'ar') {
+                currentLang = 'en';
+                document.documentElement.lang = 'en';
+                document.documentElement.dir = 'ltr';
+                document.getElementById('langLabel').textContent = 'عربي';
+                document.querySelectorAll('[data-i18n]').forEach(function(el) {
+                    var key = el.getAttribute('data-i18n');
+                    if (translations.en[key]) el.innerHTML = translations.en[key];
+                });
+            } else {
+                currentLang = 'ar';
+                document.documentElement.lang = 'ar';
+                document.documentElement.dir = 'rtl';
+                document.getElementById('langLabel').textContent = 'EN';
+                document.querySelectorAll('[data-i18n]').forEach(function(el) {
+                    var key = el.getAttribute('data-i18n');
+                    if (arData[key]) el.innerHTML = arData[key];
+                });
+            }
+        }
+
+        /* ===== HIDDEN VISIT COUNTER =====
+           Fires once per page load against counterapi.dev.
+           View totals at stats-ax7k3m9p.html */
+        (function(){
+            try {
+                var url = 'https://api.counterapi.dev/v1/qu-wsis2026-stats-ax7k3m9p/page-preview/up';
+                fetch(url, { cache: 'no-store', mode: 'cors', keepalive: true }).catch(function(){});
+            } catch (e) { /* silent */ }
+        })();
+    </script>
+
+</body>
+</html>
