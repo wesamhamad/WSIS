@@ -1639,6 +1639,16 @@
                 });
             }
         }
+
+        /* ===== HIDDEN VISIT COUNTER =====
+           Fires once per page load against counterapi.dev.
+           View totals at stats-ax7k3m9p.html */
+        (function(){
+            try {
+                var url = 'https://api.counterapi.dev/v1/qu-wsis2026-stats-ax7k3m9p/page-index/up';
+                fetch(url, { cache: 'no-store', mode: 'cors', keepalive: true }).catch(function(){});
+            } catch (e) { /* silent */ }
+        })();
     </script>
 
 </body>

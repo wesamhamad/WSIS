@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>إحصائيات الزيارات</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            font-family: 'Tajawal', system-ui, sans-serif;
+            background: linear-gradient(135deg, #14573A 0%, #092A1E 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .wrap {
+            width: 100%;
+            max-width: 560px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 18px;
+            padding: 36px 28px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .subtitle {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 18px 20px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            margin-bottom: 14px;
+        }
+        .label {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .label-title {
+            font-size: 1rem;
+            font-weight: 800;
+        }
+        .label-sub {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.55);
+            font-family: monospace, monospace;
+            direction: ltr;
+            text-align: right;
+        }
+        .count {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #88D8AD;
+            min-width: 80px;
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+        }
+        .total {
+            margin-top: 18px;
+            padding: 18px 20px;
+            background: rgba(136, 216, 173, 0.12);
+            border: 1px solid rgba(136, 216, 173, 0.35);
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .total .label-title { color: #88D8AD; }
+        .total .count { color: #fff; }
+        .actions {
+            margin-top: 22px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        button {
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 10px 18px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        button:hover { background: rgba(255,255,255,0.15); }
+        .note {
+            margin-top: 18px;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.45);
+            text-align: center;
+            line-height: 1.6;
+        }
+        .err { color: #ff9e9e; font-size: 0.88rem; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>إحصائيات الزيارات</h1>
+        <p class="subtitle">عدّاد مخفي لكل صفحة — يُحدَّث فور تحميل الزائر للصفحة.</p>
+
+        <div class="row">
+            <div class="label">
+                <span class="label-title">الصفحة الرئيسية</span>
+                <span class="label-sub">index.html</span>
+            </div>
+            <div class="count" id="c-index">…</div>
+        </div>
+
+        <div class="row">
+            <div class="label">
+                <span class="label-title">صفحة المعاينة</span>
+                <span class="label-sub">preview.html</span>
+            </div>
+            <div class="count" id="c-preview">…</div>
+        </div>
+
+        <div class="total">
+            <div class="label">
+                <span class="label-title">المجموع الكلي</span>
+            </div>
+            <div class="count" id="c-total">…</div>
+        </div>
+
+        <div class="actions">
+            <button onclick="load()">تحديث</button>
+        </div>
+
+        <p class="note">
+            العدّاد يحتسب كل تحميل للصفحة (وليس كل مستخدم فريد).<br>
+            احتفظ بهذا الرابط لك فقط — لم يُربط به من أي صفحة أخرى.
+        </p>
+    </div>
+
+    <script>
+        var BASE = 'https://api.counterapi.dev/v1/qu-wsis2026-stats-ax7k3m9p';
+
+        function fmt(n) {
+            if (n === null || n === undefined) return '—';
+            return Number(n).toLocaleString('ar-EG');
+        }
+
+        async function fetchCount(key) {
+            var r = await fetch(BASE + '/' + key + '/', { cache: 'no-store' });
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            var d = await r.json();
+            return d.count;
+        }
+
+        async function load() {
+            var elIdx = document.getElementById('c-index');
+            var elPrv = document.getElementById('c-preview');
+            var elTot = document.getElementById('c-total');
+            elIdx.textContent = '…'; elPrv.textContent = '…'; elTot.textContent = '…';
+            elIdx.classList.remove('err'); elPrv.classList.remove('err'); elTot.classList.remove('err');
+
+            var idx = null, prv = null;
+            try { idx = await fetchCount('page-index'); elIdx.textContent = fmt(idx); }
+            catch (e) { elIdx.textContent = 'خطأ'; elIdx.classList.add('err'); }
+            try { prv = await fetchCount('page-preview'); elPrv.textContent = fmt(prv); }
+            catch (e) { elPrv.textContent = 'خطأ'; elPrv.classList.add('err'); }
+
+            if (idx !== null || prv !== null) {
+                elTot.textContent = fmt((idx || 0) + (prv || 0));
+            } else {
+                elTot.textContent = 'خطأ';
+                elTot.classList.add('err');
+            }
+        }
+
+        load();
+    </script>
+</body>
+</html>
